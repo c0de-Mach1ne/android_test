@@ -1,4 +1,4 @@
-package com.sirius.test_app
+package com.sirius.test_app.data
 
 class DataModel(
     val image: String = "https://ibb.co/37KzF03",

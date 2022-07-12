@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sirius</string>
+    <string name="GameHeader">ImageView Description Game</string>
+    <string name="ic_back">Icon back button</string>
+    <string name="ic_more">Icon more button</string>
+    <string name="game_icon">Game icon</string>
 </resources>
