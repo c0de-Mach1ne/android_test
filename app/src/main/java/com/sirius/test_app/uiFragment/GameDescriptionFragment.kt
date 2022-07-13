@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
 import com.sirius.test_app.R
 import com.sirius.test_app.data.DataModel
 import com.sirius.test_app.databinding.FragmentGameDescriptionBinding
@@ -19,6 +17,7 @@ import com.sirius.test_app.databinding.FragmentGameDescriptionBinding
 class GameDescriptionFragment : Fragment() {
 
     private lateinit var binding: FragmentGameDescriptionBinding
+    private lateinit var reviewAdapter: UserReviewAdapter
     private lateinit var tagAdapter: GameTagAdapter
     private val data = DataModel()
 
@@ -53,9 +52,14 @@ class GameDescriptionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recycler: RecyclerView = view.findViewById(R.id.recyclerViewGameTag)
+        val recyclerTag: RecyclerView = view.findViewById(R.id.recyclerViewGameTag)
         tagAdapter = GameTagAdapter(data.tags)
-        recycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recycler.adapter = tagAdapter
+        recyclerTag.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerTag.adapter = tagAdapter
+
+        val recyclerReview: RecyclerView = view.findViewById(R.id.recyclerViewUserReview)
+        reviewAdapter = UserReviewAdapter(data.reviews)
+        recyclerReview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        recyclerReview.adapter = reviewAdapter
     }
 }

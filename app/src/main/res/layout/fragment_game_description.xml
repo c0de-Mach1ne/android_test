@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -48,9 +49,9 @@
                 android:layout_height="95dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="24dp"
-                android:scaleType="fitCenter"
                 android:layout_marginTop="274dp"
                 android:contentDescription="@string/game_icon"
+                android:scaleType="fitCenter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@tools:sample/avatars" />
@@ -261,6 +262,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGameRatingCntReview" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewUserReview" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
@@ -327,9 +334,9 @@
             android:paddingTop="20dp"
             android:paddingEnd="134dp"
             android:paddingBottom="20dp"
+            android:text="@string/btnInstall"
             android:textColor="#050B18"
-            android:textSize="20sp"
-            android:text="@string/btnInstall" />
+            android:textSize="20sp" />
 
     </androidx.cardview.widget.CardView>
 
