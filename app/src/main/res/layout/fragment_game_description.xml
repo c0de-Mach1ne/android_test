@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_header"
+                android:id="@+id/ivGamePoster"
                 android:layout_width="0dp"
                 android:layout_height="354dp"
                 android:contentDescription="@string/GameHeader"
@@ -37,7 +37,7 @@
                 android:layout_marginTop="296dp"
                 app:cardBackgroundColor="#050B18"
                 app:cardElevation="0dp"
-                app:layout_constraintBottom_toBottomOf="@id/iv_header"
+                app:layout_constraintBottom_toBottomOf="@id/ivGamePoster"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +48,7 @@
                 android:layout_height="95dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="24dp"
+                android:scaleType="fitCenter"
                 android:layout_marginTop="274dp"
                 android:contentDescription="@string/game_icon"
                 app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +214,7 @@
                 android:layout_marginStart="@dimen/star_start_dimens"
                 android:src="@drawable/ic_star12dp"
                 app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
-                app:layout_constraintStart_toEndOf="@id/ivStarRaining1"
+                app:layout_constraintStart_toEndOf="@id/ivStarRaining2"
                 app:layout_constraintTop_toTopOf="@id/ivStarRaining2" />
 
             <ImageView
@@ -328,7 +329,7 @@
             android:paddingBottom="20dp"
             android:textColor="#050B18"
             android:textSize="20sp"
-            tools:text="Install" />
+            android:text="@string/btnInstall" />
 
     </androidx.cardview.widget.CardView>
 

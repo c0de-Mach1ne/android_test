@@ -4,4 +4,5 @@
     <string name="ic_back">Icon back button</string>
     <string name="ic_more">Icon more button</string>
     <string name="game_icon">Game icon</string>
+    <string name="btnInstall">Install</string>
 </resources>
