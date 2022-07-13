@@ -14,6 +14,18 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="cardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/customCardViewCorner</item>
+    </style>
+
+    <style name="customCardViewCorner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
     <style name="cardViewCircle">
         <item name="cornerSize">50%</item>
     </style>
