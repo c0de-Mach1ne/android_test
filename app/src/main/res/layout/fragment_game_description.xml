@@ -29,16 +29,23 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@tools:sample/avatars" />
 
-<!--                        <com.google.android.material.card.MaterialCardView-->
-<!--                            android:id="@+id/cardView_line"-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="0dp"-->
-<!--                            android:layout_marginTop="296dp"-->
-<!--                            app:cardBackgroundColor="#050B18"-->
-<!--                            app:layout_constraintBottom_toBottomOf="@id/iv_header"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:id="@+id/cardView_line"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_marginTop="296dp"-->
+
+<!--                app:layout_constraintBottom_toBottomOf="@id/iv_header"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:background="@color/white"/>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView_game_icon"
@@ -75,12 +82,12 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/sk_modernist_bold"
-                tools:text="Dota 2"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/cardView_game_icon"
                 app:layout_constraintStart_toEndOf="@id/cardView_game_icon"
-                app:layout_constraintTop_toTopOf="@id/cardView_game_icon" />
+                app:layout_constraintTop_toTopOf="@id/cardView_game_icon"
+                tools:text="Dota 2" />
 
             <ImageView
                 android:id="@+id/ivStar1"
@@ -138,17 +145,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/sk_modernist_regular"
-                tools:text="70M"
                 android:textColor="@color/review_cnt"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/ivStar5"
                 app:layout_constraintStart_toEndOf="@id/ivStar5"
-                app:layout_constraintTop_toTopOf="@id/ivStar5" />
+                app:layout_constraintTop_toTopOf="@id/ivStar5"
+                tools:text="70M" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewGameTag"
                 android:layout_width="0dp"
                 android:layout_height="22dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardView_game_icon" />
@@ -161,13 +170,13 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/sk_modernist_regular"
-                tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the Ancient, whilst defending their own."
                 android:textColor="@color/game_description_color"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerViewGameTag"
-                tools:ignore="MissingPrefix" />
+                tools:ignore="MissingPrefix"
+                tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the Ancient, whilst defending their own." />
 
             <TextView
                 android:id="@+id/tvReviewHeader"
@@ -176,11 +185,11 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/sk_modernist_regular"
-                tools:text="Review &amp; Ratings"
                 android:textColor="#EEF2FB"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvGameDescription" />
+                app:layout_constraintTop_toBottomOf="@id/tvGameDescription"
+                tools:text="Review &amp; Ratings" />
 
             <TextView
                 android:id="@+id/tvGameRating"
@@ -189,11 +198,11 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/sk_modernist_bold"
-                tools:text="4.9"
                 android:textColor="@color/white"
                 android:textSize="48sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvReviewHeader" />
+                app:layout_constraintTop_toBottomOf="@id/tvReviewHeader"
+                tools:text="4.9" />
 
             <ImageView
                 android:id="@+id/ivStarRaining1"
@@ -315,4 +324,31 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvInstallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F4D144"
+            android:fontFamily="@font/sk_modernist_bold"
+            android:paddingStart="134dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="134dp"
+            android:paddingBottom="20dp"
+            android:textColor="#050B18"
+            android:textSize="20sp"
+            tools:text="Install" />
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
