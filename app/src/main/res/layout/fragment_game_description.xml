@@ -1,100 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050B18">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_header"
+                android:layout_width="0dp"
+                android:layout_height="354dp"
+                android:contentDescription="@string/GameHeader"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+<!--                        <com.google.android.material.card.MaterialCardView-->
+<!--                            android:id="@+id/cardView_line"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="0dp"-->
+<!--                            android:layout_marginTop="296dp"-->
+<!--                            app:cardBackgroundColor="#050B18"-->
+<!--                            app:layout_constraintBottom_toBottomOf="@id/iv_header"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_game_icon"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="274dp"
+                app:cardBackgroundColor="@color/icon_background"
+                app:cardCornerRadius="13.5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#000000"
+                    app:cardCornerRadius="12.5dp">
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/game_icon"
+                        tools:src="@tools:sample/avatars" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/sk_modernist_bold"
+                tools:text="Dota 2"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/cardView_game_icon"
+                app:layout_constraintStart_toEndOf="@id/cardView_game_icon"
+                app:layout_constraintTop_toTopOf="@id/cardView_game_icon" />
+
+            <ImageView
+                android:id="@+id/ivStar1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/star_top_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintStart_toEndOf="@id/cardView_game_icon"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
+
+            <ImageView
+                android:id="@+id/ivStar2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:layout_marginTop="@dimen/star_top_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintStart_toEndOf="@id/ivStar1"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
+
+            <ImageView
+                android:id="@+id/ivStar3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:layout_marginTop="@dimen/star_top_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintStart_toEndOf="@id/ivStar2"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
+
+            <ImageView
+                android:id="@+id/ivStar4"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:layout_marginTop="@dimen/star_top_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintStart_toEndOf="@id/ivStar3"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
+
+            <ImageView
+                android:id="@+id/ivStar5"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:layout_marginTop="@dimen/star_top_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintStart_toEndOf="@id/ivStar4"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
+
+            <TextView
+                android:id="@+id/tvReviewCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/sk_modernist_regular"
+                tools:text="70M"
+                android:textColor="@color/review_cnt"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivStar5"
+                app:layout_constraintStart_toEndOf="@id/ivStar5"
+                app:layout_constraintTop_toTopOf="@id/ivStar5" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGameTag"
+                android:layout_width="0dp"
+                android:layout_height="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView_game_icon" />
+
+            <TextView
+                android:id="@+id/tvGameDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/sk_modernist_regular"
+                tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the Ancient, whilst defending their own."
+                android:textColor="@color/game_description_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewGameTag"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvReviewHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sk_modernist_regular"
+                tools:text="Review &amp; Ratings"
+                android:textColor="#EEF2FB"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGameDescription" />
+
+            <TextView
+                android:id="@+id/tvGameRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/sk_modernist_bold"
+                tools:text="4.9"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvReviewHeader" />
+
+            <ImageView
+                android:id="@+id/ivStarRaining1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintStart_toEndOf="@id/tvGameRating"
+                app:layout_constraintTop_toTopOf="@id/tvGameRating"
+                tools:ignore="DuplicateIds" />
+
+            <ImageView
+                android:id="@+id/ivStarRaining2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
+                app:layout_constraintStart_toEndOf="@id/ivStarRaining1"
+                app:layout_constraintTop_toTopOf="@id/ivStarRaining1" />
+
+            <ImageView
+                android:id="@+id/ivStarRaining3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
+                app:layout_constraintStart_toEndOf="@id/ivStarRaining1"
+                app:layout_constraintTop_toTopOf="@id/ivStarRaining2" />
+
+            <ImageView
+                android:id="@+id/ivStarRaining4"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
+                app:layout_constraintStart_toEndOf="@id/ivStarRaining3"
+                app:layout_constraintTop_toTopOf="@id/ivStarRaining1" />
+
+            <ImageView
+                android:id="@+id/ivStarRaining5"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/star_start_dimens"
+                android:src="@drawable/ic_star12dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
+                app:layout_constraintStart_toEndOf="@id/ivStarRaining4"
+                app:layout_constraintTop_toTopOf="@id/ivStarRaining1" />
+
+            <TextView
+                android:id="@+id/tvGameRatingCntReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sk_modernist_regular"
+                android:textColor="#A8ADB7"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tvGameRating"
+                app:layout_constraintTop_toBottomOf="@id/ivStarRaining1"
+                tools:text="70m Reviews" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewUserReview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGameRatingCntReview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@color/button_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/cardViewCircle">
 
         <ImageView
-            android:id="@+id/iv_header"
-            android:layout_width="0dp"
-            android:layout_height="354dp"
-            android:contentDescription="@string/GameHeader"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/ivMore"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/ic_more"
+            android:src="@drawable/ic_more"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        app:cardBackgroundColor="@color/button_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/cardViewCircle">
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="24dp"
-            app:cardBackgroundColor="@color/button_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/cardViewCircle">
-
-            <ImageView
-                android:id="@+id/iv_more"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/ic_more"
-                android:src="@drawable/ic_more"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="56dp"
-            app:cardBackgroundColor="@color/button_background"
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/ic_back"
+            android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/cardViewCircle">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/ic_back"
-                android:src="@drawable/ic_back"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="88dp"
-            android:layout_height="88dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="274dp"
-            app:cardBackgroundColor="@color/icon_background"
-            app:cardCornerRadius="13.5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="83dp"
-                android:layout_height="83dp"
-                android:layout_gravity="center"
-                app:cardBackgroundColor="#000000"
-                app:cardCornerRadius="12.5dp">
-
-                <ImageView
-                    android:layout_width="54dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/game_icon"
-                    tools:src="@tools:sample/avatars" />
-
-            </androidx.cardview.widget.CardView>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
