@@ -155,11 +155,6 @@
                 app:layout_constraintStart_toEndOf="@id/tvGameRating"
                 app:layout_constraintTop_toTopOf="@id/tvGameRating" />
 
-            <androidx.constraintlayout.widget.Barrier
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/recyclerViewStarsUserReview"/>
-
             <TextView
                 android:id="@+id/tvGameRatingCntReview"
                 android:layout_width="wrap_content"
@@ -231,36 +226,38 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="26dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewUserReview">
+
+                <TextView
+                    android:id="@+id/tvInstallButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#F4D144"
+                    android:fontFamily="@font/sk_modernist_bold"
+                    android:paddingStart="134dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="134dp"
+                    android:paddingBottom="20dp"
+                    android:text="@string/btnInstall"
+                    android:textColor="#050B18"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardViewButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_marginBottom="26dp"
-        app:cardCornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/tvInstallButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#F4D144"
-            android:fontFamily="@font/sk_modernist_bold"
-            android:paddingStart="134dp"
-            android:paddingTop="20dp"
-            android:paddingEnd="134dp"
-            android:paddingBottom="20dp"
-            android:text="@string/btnInstall"
-            android:textColor="#050B18"
-            android:textSize="20sp" />
-
-    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
