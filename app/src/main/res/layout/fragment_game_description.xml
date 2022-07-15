@@ -146,6 +146,19 @@
                 app:layout_constraintTop_toBottomOf="@id/tvReviewHeader"
                 tools:text="4.9" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#1A1F29"
+                app:layout_constraintTop_toBottomOf="@id/tvGameRatingCntReview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="38dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginTop="15dp"/>
+
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewStarsUserReview"
                 android:layout_width="wrap_content"
