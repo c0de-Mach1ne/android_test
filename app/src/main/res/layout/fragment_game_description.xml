@@ -75,7 +75,7 @@
                 android:id="@+id/recyclerViewStarsReviewCnt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="7dp"
                 app:layout_constraintStart_toEndOf="@id/ivGameIcon"
                 app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
@@ -150,7 +150,7 @@
                 android:id="@+id/recyclerViewStarsUserReview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="14dp"
                 app:layout_constraintStart_toEndOf="@id/tvGameRating"
                 app:layout_constraintTop_toTopOf="@id/tvGameRating" />
@@ -185,53 +185,53 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerViewUserReview" />
 
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="@color/button_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/cardViewCircle">
+
+                <ImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/ic_more"
+                    android:src="@drawable/ic_more"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="56dp"
+                app:cardBackgroundColor="@color/button_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/cardViewCircle">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/ic_back"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="24dp"
-        app:cardBackgroundColor="@color/button_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/cardViewCircle">
-
-        <ImageView
-            android:id="@+id/ivMore"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/ic_more"
-            android:src="@drawable/ic_more"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="56dp"
-        app:cardBackgroundColor="@color/button_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/cardViewCircle">
-
-        <ImageView
-            android:id="@+id/ivBack"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/ic_back"
-            android:src="@drawable/ic_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/cardViewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -255,6 +255,6 @@
             android:textColor="#050B18"
             android:textSize="20sp" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

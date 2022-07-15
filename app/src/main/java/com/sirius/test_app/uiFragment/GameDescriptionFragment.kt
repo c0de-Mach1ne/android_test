@@ -13,11 +13,13 @@ import com.bumptech.glide.Priority
 import com.sirius.test_app.R
 import com.sirius.test_app.data.DataModel
 import com.sirius.test_app.databinding.FragmentGameDescriptionBinding
+import kotlin.math.roundToInt
 
 class GameDescriptionFragment : Fragment() {
 
     private lateinit var binding: FragmentGameDescriptionBinding
     private lateinit var reviewAdapter: UserReviewAdapter
+    private lateinit var starsAdapter: StarsAdapter
     private lateinit var tagAdapter: GameTagAdapter
     private val data = DataModel()
 
@@ -54,12 +56,26 @@ class GameDescriptionFragment : Fragment() {
 
         val recyclerTag: RecyclerView = view.findViewById(R.id.recyclerViewGameTag)
         tagAdapter = GameTagAdapter(data.tags)
-        recyclerTag.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerTag.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerTag.adapter = tagAdapter
 
         val recyclerReview: RecyclerView = view.findViewById(R.id.recyclerViewUserReview)
         reviewAdapter = UserReviewAdapter(data.reviews)
-        recyclerReview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        recyclerReview.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerReview.adapter = reviewAdapter
+
+        val recyclerReviewCntStars: RecyclerView =
+            view.findViewById(R.id.recyclerViewStarsReviewCnt)
+        starsAdapter = StarsAdapter(data.rating.roundToInt())
+        recyclerReviewCntStars.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerReviewCntStars.adapter = starsAdapter
+
+        val recyclerRatingStars: RecyclerView = view.findViewById(R.id.recyclerViewStarsUserReview)
+        recyclerRatingStars.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerRatingStars.adapter = starsAdapter
     }
 }

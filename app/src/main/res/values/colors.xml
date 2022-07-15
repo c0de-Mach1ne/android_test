@@ -11,4 +11,6 @@
     <color name="icon_background">#1F2430</color>
     <color name="review_cnt">#45454D</color>
     <color name="game_description_color">#EEF2FB</color>
+    <color name="yellow">#FFE600</color>
+    <color name="gray_dark">#6D6D80</color>
 </resources>
