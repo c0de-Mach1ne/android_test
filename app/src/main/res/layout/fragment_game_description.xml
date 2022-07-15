@@ -155,6 +155,11 @@
                 app:layout_constraintStart_toEndOf="@id/tvGameRating"
                 app:layout_constraintTop_toTopOf="@id/tvGameRating" />
 
+            <androidx.constraintlayout.widget.Barrier
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewStarsUserReview"/>
+
             <TextView
                 android:id="@+id/tvGameRatingCntReview"
                 android:layout_width="wrap_content"
@@ -179,17 +184,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGameRatingCntReview" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/recyclerViewUserReview" />
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_marginTop="56dp"
                 android:layout_marginEnd="24dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardBackgroundColor="@color/button_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -211,6 +212,8 @@
                 android:layout_height="56dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="56dp"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardBackgroundColor="@color/button_background"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -228,6 +231,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
@@ -235,7 +239,9 @@
         android:id="@+id/cardViewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="26dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
