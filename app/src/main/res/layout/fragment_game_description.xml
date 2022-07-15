@@ -71,54 +71,13 @@
                 app:layout_constraintTop_toTopOf="@id/ivGameIcon"
                 tools:text="Dota 2" />
 
-            <ImageView
-                android:id="@+id/ivStar1"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStarsReviewCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="@dimen/star_top_dimens"
-                android:src="@drawable/ic_star12dp"
+                android:layout_marginTop="7dp"
                 app:layout_constraintStart_toEndOf="@id/ivGameIcon"
-                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
-
-            <ImageView
-                android:id="@+id/ivStar2"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:layout_marginTop="@dimen/star_top_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintStart_toEndOf="@id/ivStar1"
-                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
-
-            <ImageView
-                android:id="@+id/ivStar3"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:layout_marginTop="@dimen/star_top_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintStart_toEndOf="@id/ivStar2"
-                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
-
-            <ImageView
-                android:id="@+id/ivStar4"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:layout_marginTop="@dimen/star_top_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintStart_toEndOf="@id/ivStar3"
-                app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
-
-            <ImageView
-                android:id="@+id/ivStar5"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:layout_marginTop="@dimen/star_top_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintStart_toEndOf="@id/ivStar4"
                 app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
 
             <TextView
@@ -129,9 +88,9 @@
                 android:fontFamily="@font/sk_modernist_regular"
                 android:textColor="@color/review_cnt"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@id/ivStar5"
-                app:layout_constraintStart_toEndOf="@id/ivStar5"
-                app:layout_constraintTop_toTopOf="@id/ivStar5"
+                app:layout_constraintBottom_toBottomOf="@id/recyclerViewStarsReviewCnt"
+                app:layout_constraintStart_toEndOf="@id/recyclerViewStarsReviewCnt"
+                app:layout_constraintTop_toTopOf="@id/recyclerViewStarsReviewCnt"
                 tools:text="70M" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -187,56 +146,14 @@
                 app:layout_constraintTop_toBottomOf="@id/tvReviewHeader"
                 tools:text="4.9" />
 
-            <ImageView
-                android:id="@+id/ivStarRaining1"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStarsUserReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="14dp"
-                android:src="@drawable/ic_star12dp"
                 app:layout_constraintStart_toEndOf="@id/tvGameRating"
-                app:layout_constraintTop_toTopOf="@id/tvGameRating"
-                tools:ignore="DuplicateIds" />
-
-            <ImageView
-                android:id="@+id/ivStarRaining2"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
-                app:layout_constraintStart_toEndOf="@id/ivStarRaining1"
-                app:layout_constraintTop_toTopOf="@id/ivStarRaining1" />
-
-            <ImageView
-                android:id="@+id/ivStarRaining3"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
-                app:layout_constraintStart_toEndOf="@id/ivStarRaining2"
-                app:layout_constraintTop_toTopOf="@id/ivStarRaining2" />
-
-            <ImageView
-                android:id="@+id/ivStarRaining4"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
-                app:layout_constraintStart_toEndOf="@id/ivStarRaining3"
-                app:layout_constraintTop_toTopOf="@id/ivStarRaining1" />
-
-            <ImageView
-                android:id="@+id/ivStarRaining5"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="@dimen/star_start_dimens"
-                android:src="@drawable/ic_star12dp"
-                app:layout_constraintBottom_toBottomOf="@id/ivStarRaining1"
-                app:layout_constraintStart_toEndOf="@id/ivStarRaining4"
-                app:layout_constraintTop_toTopOf="@id/ivStarRaining1" />
+                app:layout_constraintTop_toTopOf="@id/tvGameRating" />
 
             <TextView
                 android:id="@+id/tvGameRatingCntReview"
@@ -248,7 +165,7 @@
                 android:textColor="#A8ADB7"
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@id/tvGameRating"
-                app:layout_constraintTop_toBottomOf="@id/ivStarRaining1"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewStarsUserReview"
                 tools:text="70m Reviews" />
 
             <androidx.recyclerview.widget.RecyclerView
