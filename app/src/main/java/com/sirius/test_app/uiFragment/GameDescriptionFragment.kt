@@ -7,23 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
-import com.sirius.test_app.R
 import com.sirius.test_app.data.DataModel
 import com.sirius.test_app.databinding.FragmentGameDescriptionBinding
+import com.sirius.test_app.uiFragment.adapters.GameTagAdapter
+import com.sirius.test_app.uiFragment.adapters.StarsAdapter
+import com.sirius.test_app.uiFragment.adapters.UserReviewAdapter
 import kotlin.math.roundToInt
 
 class GameDescriptionFragment : Fragment() {
 
     private lateinit var binding: FragmentGameDescriptionBinding
-    private lateinit var reviewAdapter: UserReviewAdapter
-    private lateinit var starsAdapter: StarsAdapter
-    private lateinit var tagAdapter: GameTagAdapter
     private val data = DataModel()
 
-    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,51 +28,81 @@ class GameDescriptionFragment : Fragment() {
     ): View {
         binding = FragmentGameDescriptionBinding.inflate(layoutInflater, container, false)
 
-        binding.tvGameName.text = data.name
-        binding.tvReviewCnt.text = data.gradeCnt
-        binding.tvGameDescription.text = data.description
-        binding.tvGameRating.text = data.rating.toString()
-        binding.tvGameRatingCntReview.text = "${data.gradeCnt} Reviews"
+        initGameName()
+        initNumOfReviews()
+        initGameDescription()
+        initGameRating()
+        loadGamePoster()
+        loadGameIcon()
+        initStarsRecyclers()
+        initTagsRecycler()
+        initReviewRecycler()
 
+        return binding.root
+    }
+
+    private fun initGameName() {
+        binding.tvGameName.text = data.name
+    }
+
+    private fun initGameRating() {
+        binding.tvGameRating.text = data.rating.toString()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun initNumOfReviews() {
+        binding.tvReviewCnt.text = data.gradeCnt
+        binding.tvGameRatingCntReview.text = "${data.gradeCnt} Reviews"
+    }
+
+    private fun initGameDescription() {
+        binding.tvGameDescription.text = data.description
+    }
+
+    private fun loadGameIcon() {
         Glide.with(binding.tvGameName.context)
             .load(data.logo)
             .priority(Priority.HIGH)
             .into(binding.ivGameIcon)
+    }
 
+    private fun loadGamePoster() {
         Glide.with(binding.tvGameName.context)
             .load(data.image)
             .priority(Priority.HIGH)
             .centerCrop()
             .into(binding.ivGamePoster)
-
-        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun initStarsRecyclers() {
+        with(binding.recyclerViewStarsReviewCnt) {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = StarsAdapter(data.rating.roundToInt())
+        }
 
-        val recyclerTag: RecyclerView = view.findViewById(R.id.recyclerViewGameTag)
-        tagAdapter = GameTagAdapter(data.tags)
-        recyclerTag.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recyclerTag.adapter = tagAdapter
+        with(binding.recyclerViewStarsUserReview) {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        val recyclerReview: RecyclerView = view.findViewById(R.id.recyclerViewUserReview)
-        reviewAdapter = UserReviewAdapter(data.reviews)
-        recyclerReview.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        recyclerReview.adapter = reviewAdapter
+            adapter = StarsAdapter(data.rating.roundToInt())
+        }
+    }
 
-        val recyclerReviewCntStars: RecyclerView =
-            view.findViewById(R.id.recyclerViewStarsReviewCnt)
-        starsAdapter = StarsAdapter(data.rating.roundToInt())
-        recyclerReviewCntStars.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recyclerReviewCntStars.adapter = starsAdapter
+    private fun initTagsRecycler() {
+        with(binding.recyclerViewGameTag) {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        val recyclerRatingStars: RecyclerView = view.findViewById(R.id.recyclerViewStarsUserReview)
-        recyclerRatingStars.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        recyclerRatingStars.adapter = starsAdapter
+            adapter = GameTagAdapter(data.tags)
+        }
+    }
+
+    private fun initReviewRecycler() {
+        with(binding.recyclerViewUserReview) {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            adapter = UserReviewAdapter(data.reviews)
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.sirius.test_app.uiFragment
+package com.sirius.test_app.uiFragment.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sirius.test_app.R
+import com.sirius.test_app.databinding.TagItemBinding
 
 class GameTagAdapter(private val tags: List<String>) :
     RecyclerView.Adapter<GameTagAdapter.TagViewHolder>() {
@@ -26,10 +27,10 @@ class GameTagAdapter(private val tags: List<String>) :
     inner class TagViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
-        private val tagName: TextView = itemView.findViewById(R.id.tvTag)
+        private val binding = TagItemBinding.bind(itemView)
 
-        fun onBind(tag: String){
-            tagName.text = tag
+        fun onBind(tag: String) {
+            binding.tvTag.text = tag
         }
     }
 }
